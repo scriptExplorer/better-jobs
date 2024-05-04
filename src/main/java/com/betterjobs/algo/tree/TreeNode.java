@@ -22,13 +22,46 @@ public class TreeNode {
      *
      */
 
-    public static void binarySearchDFS(TreeNode root, List<Integer> result) {
+    public static void binarySearchDFSPreOrder(TreeNode root, List<Integer> result) {
+        // order: root -> left -> right
         if (root == null) {
             return;
         }
         result.add(root.value);
-        binarySearchDFS(root.left, result);
-        binarySearchDFS(root.right, result);
+        binarySearchDFSPreOrder(root.left, result);
+        binarySearchDFSPreOrder(root.right, result);
+    }
+
+    /**
+     *
+     * Time complexity O(n)
+     * Space complexity O(n)
+     * depth first traversal - in order
+     *
+     */
+    public static void binarySearchDFSInOrder(TreeNode root, List<Integer> result) {
+        //order: left -> root -> right
+        if (root == null) {
+            return;
+        }
+        binarySearchDFSInOrder(root.left, result);
+        result.add(root.value);
+        binarySearchDFSInOrder(root.right, result);
+    }
+
+    /**
+     * Time complexity O(n)
+     * Space complexity O(n)
+     * depth first traversal - post order
+     */
+    public static void binarySearchDFSPostOrder(TreeNode root, List<Integer> result) {
+        //order: left -> right -> root
+        if (root == null) {
+            return;
+        }
+        binarySearchDFSPostOrder(root.left, result);
+        binarySearchDFSPostOrder(root.right, result);
+        result.add(root.value);
     }
 
     /**
@@ -68,12 +101,24 @@ public class TreeNode {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
 
+        System.out.println(binarySearchBFS(root));
 
         List<Integer> result = new ArrayList<Integer>();
-        binarySearchDFS(root, result);
+        binarySearchDFSPreOrder(root, result);
         System.out.println(result);
 
-        System.out.println(binarySearchBFS(root));
+        result = new ArrayList<Integer>();
+        binarySearchDFSPreOrder(root, result);
+        System.out.println(result);
+
+        result = new ArrayList<Integer>();
+        binarySearchDFSInOrder(root, result);
+        System.out.println(result);
+
+        result = new ArrayList<Integer>();
+        binarySearchDFSPostOrder(root, result);
+        System.out.println(result);
+
     }
 
 }
