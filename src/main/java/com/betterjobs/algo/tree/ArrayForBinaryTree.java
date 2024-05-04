@@ -37,12 +37,17 @@ public class ArrayForBinaryTree {
 
     public List<Integer> getPreOrder() {
         List<Integer> result = new ArrayList<Integer>();
-        for (Integer i: tree) {
-            if (i != null) {
-                result.add(i);
-            }
-        }
+        getPreOrder(0, result);
         return result;
+    }
+    private void getPreOrder(int index, List<Integer> result) {
+        if (index <0 || index >= tree.size()) {
+            return;
+        }
+        // order: left -> parent -> right
+        result.add(value(index));
+        getPreOrder(leftIndex(index), result);
+        getPreOrder(rightIndex(index), result);
     }
 
     public List<Integer> getInOrder() {
@@ -105,9 +110,9 @@ public class ArrayForBinaryTree {
         tree.tree.add(5);
         tree.tree.add(6);
         tree.tree.add(7);
-        
-        System.out.println(tree.getInOrder());
 
+        System.out.println(tree.getPreOrder());
+        System.out.println(tree.getInOrder());
         System.out.println(tree.getPostOrder());
     }
 
