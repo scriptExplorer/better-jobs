@@ -148,7 +148,7 @@ public class BinarySearchTree {
 
 
         remove(root, 8);
-        System.out.println(TreeNode.binarySearchBFS(root));
+        System.out.println(BfsAndDfs.binarySearchBFS(root));
     }
 
 }
