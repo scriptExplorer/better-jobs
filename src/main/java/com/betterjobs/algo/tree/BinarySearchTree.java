@@ -70,63 +70,29 @@ public class BinarySearchTree {
         }
     }
 
-    public static void remove(TreeNode node, int value) {
+    public static TreeNode remove(TreeNode node, int value) {
         if (node == null) {
-            return;
+            return null;
         }
-
-        TreeNode targetNode = node;
-        TreeNode parentNode = null;
-        while(targetNode != null) {
-            if (value < targetNode.value) {
-                parentNode = targetNode;
-                targetNode = targetNode.left;
-            } else if ( value > targetNode.value) {
-                parentNode = targetNode;
-                targetNode = targetNode.right;
-            } else {
-                break;
-            }
-        }
-        if (targetNode == null) {
-            return;
+        if (value < node.value) {
+            node.left = remove(node.left, value);
+        } else if (value > node.value) {
+            node.right = remove(node.right, value);
         } else {
-            //没有子节点或者有1个
-            if (targetNode.left == null || targetNode.right == null ) {
-                TreeNode replaceNode = targetNode.left;
-                if (replaceNode == null) {
-                    replaceNode = targetNode.right;
-                }
-                if (replaceNode == node) {
-                    node = targetNode;
-                } else {
-                    if (parentNode.left == targetNode) {
-                        parentNode.left = replaceNode;
-                    } else {
-                        parentNode.right = replaceNode;
-                    }
-                }
+            if (node.left == null) {
+                node = node.right;
+            } else if (node.right == null) {
+                node = node.left;
             } else {
-                //有2个子节点, 有2个选择都可以: 1,找出左边最大的 2,找出右边最小的.
-                TreeNode replaceNode = targetNode.left;
-                while(replaceNode.right != null) {
-                    replaceNode = replaceNode.right;
+                TreeNode deleteNode = node.right;
+                while(deleteNode.left != null) {
+                    deleteNode = deleteNode.left;
                 }
-
-                remove(targetNode, replaceNode.value);
-
-                if (parentNode == null) {
-                    node.value = replaceNode.value;
-                } else {
-                    if (parentNode.left == targetNode) {
-                        parentNode.left = replaceNode;
-                    } else {
-                        parentNode.right = replaceNode;
-                    }
-                }
-
+                node.value = deleteNode.value;
+                node.right = remove(deleteNode, deleteNode.value);
             }
         }
+        return node;
     }
 
     public static void main (String [] args) {
@@ -147,7 +113,7 @@ public class BinarySearchTree {
 
 
 
-        remove(root, 8);
+        remove(root, 14);
         System.out.println(BfsAndDfs.binarySearchBFS(root));
     }
 
