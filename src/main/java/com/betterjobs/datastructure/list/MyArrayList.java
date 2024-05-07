@@ -1,11 +1,16 @@
-package com.betterjobs.datastructure;
+package com.betterjobs.datastructure.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * 初始化需要指定大小，扩容Time complexity: O(n)
+ *
+ * - 排列有序，允许值重复
+ * - 查询速度快， 添加删除慢
+ * - 初始化需要指定大小，扩容Time complexity: O(n)
+ * - 线程不安全
+ * - 底层数组实现
  */
 public class MyArrayList {
 
@@ -42,7 +47,7 @@ public class MyArrayList {
         List<Integer> nums = create();
         return nums.get(index);
     }
-    
+
 
     /**
      *  delete data from list by index

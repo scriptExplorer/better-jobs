@@ -1,12 +1,15 @@
-package com.betterjobs.datastructure;
+package com.betterjobs.datastructure.list;
 
 import java.util.LinkedList;
 
 /**
  *  LinkedList相比Arraylist的优势在于插入和删除操作的时间复杂度为O(1)
  *  由于需要存储指针，所以空间复杂度会高一些。
- *  初始化不需要指定大小，无扩容代价
- *  Get data by index Time complexity: O(n)
+ *  - 排列有序，允许值重复
+ *  - 查询速度慢， 添加删除快
+ *  - 初始化不需要指定大小，无扩容代价
+ *  - 线程不安全
+ *  - 底层双向链表实现
  */
 public class MyLinkedList {
 
