@@ -5,12 +5,16 @@ import java.util.Vector;
 /**
  * Vector更接近ArrayList，但是是线程安全的
  *  - 特性和ArrayList一样
+ *      - 排列有序，允许值重复
+ *      - 查询速度快， 添加删除慢
+ *      - 初始化需要指定大小，扩容Time complexity: O(n)
+ *      - 底层数组实现
  *  - 线程安全
  */
 public class MyVector {
 
-    public Vector create() {
-        Vector<Integer> nums = new Vector<>();
+    public static Vector create() {
+        Vector<Integer> nums = new Vector<Integer>();
         nums.add(1);
         nums.add(3);
         nums.add(2);
@@ -24,4 +28,8 @@ public class MyVector {
         return nums.get(0);
     }
 
+    public static void main(String[] args) {
+        MyVector myVector = new MyVector();
+        System.out.println(myVector.get());
+    }
 }

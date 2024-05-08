@@ -18,7 +18,7 @@ public class MyLinkedList {
      *
      * @return
      */
-    public LinkedList<Integer> create() {
+    public static LinkedList<Integer> create() {
         LinkedList<Integer> nums = new LinkedList<Integer>();
         nums.add(1);
         nums.add(3);
@@ -34,7 +34,7 @@ public class MyLinkedList {
      * Time complexity: O(1)
      * @param value
      */
-    public void add(int value) {
+    public static void add(int value) {
         LinkedList<Integer> nums = create();
         nums.addLast(value);
     }
@@ -46,7 +46,7 @@ public class MyLinkedList {
      * @param index
      * @return
      */
-    public int get(int index) {
+    public static int get(int index) {
         LinkedList<Integer> nums = create();
         return nums.get(index);
     }
@@ -56,7 +56,7 @@ public class MyLinkedList {
      * Time complexity: O(1)
      * @param index
      */
-    public void delete(int index) {
+    public static void delete(int index) {
         LinkedList<Integer> nums = create();
         nums.remove(index);
     }
