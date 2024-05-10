@@ -18,13 +18,13 @@ public class MyLinkedList {
      *
      * @return
      */
-    public static LinkedList<Integer> create() {
-        LinkedList<Integer> nums = new LinkedList<Integer>();
-        nums.add(1);
-        nums.add(3);
-        nums.add(2);
-        nums.add(5);
-        nums.add(4);
+    public static LinkedList<String> create() {
+        LinkedList<String> nums = new LinkedList<String>();
+        nums.add("1");
+        nums.add("3");
+        nums.add("2");
+        nums.add("5");
+        nums.add("4");
         return nums;
     }
 
@@ -34,8 +34,8 @@ public class MyLinkedList {
      * Time complexity: O(1)
      * @param value
      */
-    public static void add(int value) {
-        LinkedList<Integer> nums = create();
+    public static void add(String value) {
+        LinkedList<String> nums = create();
         nums.addLast(value);
     }
 
@@ -46,19 +46,19 @@ public class MyLinkedList {
      * @param index
      * @return
      */
-    public static int get(int index) {
-        LinkedList<Integer> nums = create();
+    public static String get(int index) {
+        LinkedList<String> nums = create();
         return nums.get(index);
     }
 
     /**
      * delete data from list by index
      * Time complexity: O(1)
-     * @param index
+     * @param item
      */
-    public static void delete(int index) {
-        LinkedList<Integer> nums = create();
-        nums.remove(index);
+    public static void delete(String item) {
+        LinkedList<String> nums = create();
+        nums.remove(item);
     }
 
     public static void main(String[] args) {

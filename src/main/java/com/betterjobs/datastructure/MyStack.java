@@ -4,16 +4,30 @@ import java.util.Stack;
 
 /**
  * 后进先出
+ * - 基于Vector实现
+ *      - 特性和ArrayList一样
+ *          - 排列有序，允许值重复
+ *          - 查询速度快， 添加删除慢
+ *          - 初始化需要指定大小，扩容Time complexity: O(n)
+ *          - 底层数组实现
+ *          - 线程安全
+ *
+ * - 两种实现栈方式
+ * 1. 数组实现(Stack)
+ *   - 超出容量扩容 Time complexity: O(n)
+ *
+ * 2. 链表实现(LinkedList)
+ *   - 无需扩容，平均效率更稳定
  */
 public class MyStack {
 
-    public Stack<Integer> create() {
-        Stack<Integer> nums = new Stack<>();
-        nums.push(1);
-        nums.push(3);
-        nums.push(2);
-        nums.push(5);
-        nums.push(4);
+    public static Stack<String> create() {
+        Stack<String> nums = new Stack<>();
+        nums.push("1");
+        nums.push("3");
+        nums.push("2");
+        nums.push("5");
+        nums.push("4");
         return nums;
     }
 
@@ -22,8 +36,8 @@ public class MyStack {
      * Time complexity: O(1)
      * @param value
      */
-    public void push(int value) {
-        Stack<Integer> nums = create();
+    public static void push(String value) {
+        Stack<String> nums = create();
         nums.push(value);
     }
 
@@ -32,8 +46,8 @@ public class MyStack {
      * Time complexity: O(1)
      * @param value
      */
-    public void add(int value) {
-        Stack<Integer> nums = create();
+    public static void add(String value) {
+        Stack<String> nums = create();
         nums.add(value);
     }
 
@@ -42,8 +56,8 @@ public class MyStack {
      * Time complexity: O(1)
      * @return
      */
-    public int pop() {
-        Stack<Integer> nums = create();
+    public static String pop() {
+        Stack<String> nums = create();
         return nums.pop();
     }
 
@@ -52,10 +66,17 @@ public class MyStack {
      * Time complexity: O(1)
      * @return
      */
-    public int peek() {
-        Stack<Integer> nums = create();
+    public static String peek() {
+        Stack<String> nums = create();
         return nums.peek();
     }
+
+    public static void main(String[] args) {
+        MyStack myStack = new MyStack();
+        System.out.println(myStack.pop());
+        System.out.println(myStack.peek());
+    }
+
 
 
 }

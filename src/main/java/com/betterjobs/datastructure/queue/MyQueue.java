@@ -15,12 +15,12 @@ import java.util.Queue;
  */
 public class MyQueue {
     public static Queue create() {
-        Queue<Integer> nums = new LinkedList<>();
-        nums.add(1);
-        nums.add(3);
-        nums.add(2);
-        nums.add(5);
-        nums.add(4);
+        Queue<String> nums = new LinkedList<>();
+        nums.add("1");
+        nums.add("3");
+        nums.add("2");
+        nums.add("5");
+        nums.add("4");
         return nums;
     }
 
@@ -29,18 +29,18 @@ public class MyQueue {
      * Time complexity: O(1)
      * @param value
      */
-    public static void push(int value) {
-        Queue<Integer> nums = create();
+    public static void push(String value) {
+        Queue<String> nums = create();
         nums.add(value);
     }
 
     /**
-     * pop data from queue
+     * pull data from queue
      * Time complexity: O(1)
      * @return
      */
-    public static int pop() {
-        Queue<Integer> nums = create();
+    public static String pull() {
+        Queue<String> nums = create();
         return nums.poll();
     }
 
@@ -49,8 +49,8 @@ public class MyQueue {
      * Time complexity: O(1)
      * @return
      */
-    public static int peek() {
-        Queue<Integer> nums = create();
+    public static String peek() {
+        Queue<String> nums = create();
         return nums.peek();
     }
 

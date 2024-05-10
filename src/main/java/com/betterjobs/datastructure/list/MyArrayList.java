@@ -20,9 +20,9 @@ public class MyArrayList {
      * @return
      */
     public static ArrayList create() {
-        // 有初始值（注意数组的元素类型需为 int[] 的包装类 Integer[]）
-        Integer[] numbers = new Integer[] { 1, 3, 2, 5, 4 };
-        ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(numbers));
+        // 有初始值（注意数组的元素类型需为 int[] 的包装类 String[]）
+        String[] numbers = new String[] { "1", "3", "2", "5", "4"};
+        ArrayList<String> nums = new ArrayList<>(Arrays.asList(numbers));
         return nums;
     }
 
@@ -32,8 +32,8 @@ public class MyArrayList {
      * @param value
      * @return
      */
-    public void add(int value) {
-        ArrayList<Integer> nums = create();
+    public void add(String value) {
+        ArrayList<String> nums = create();
         nums.add(value);
     }
 
@@ -43,8 +43,8 @@ public class MyArrayList {
      * @param index
      * @return
      */
-    public static Integer get(int index) {
-        List<Integer> nums = create();
+    public static String get(int index) {
+        List<String> nums = create();
         return nums.get(index);
     }
 
@@ -55,8 +55,8 @@ public class MyArrayList {
      * @param index
      * @return
      */
-    public static int delete(int index) {
-        ArrayList<Integer> nums = create();
+    public static String delete(int index) {
+        ArrayList<String> nums = create();
         return nums.remove(index);
     }
 
@@ -67,8 +67,8 @@ public class MyArrayList {
      * @param value
      * @return
      */
-    public static int insert(int index, int value) {
-        ArrayList<Integer> nums = create();
+    public static String insert(int index, String value) {
+        ArrayList<String> nums = create();
         nums.add(index, value);
         return value;
     }
@@ -81,20 +81,20 @@ public class MyArrayList {
      * @param list2
      * @return
      */
-    public static List mergeList(List<Integer> list1, List<Integer> list2) {
-        List<Integer> list = new ArrayList<>();
+    public static List mergeList(List<String> list1, List<String> list2) {
+        List<String> list = new ArrayList<>();
         list.addAll(list1);
         list.addAll(list2);
         return list;
     }
 
     public static void main (String [] args) {
-        List<Integer> nums = create();
+        List<String> nums = create();
         System.out.println(nums);
         System.out.println(get(2));
         System.out.println(delete(2));
-        System.out.println(insert(2, 10));
-        List<Integer> nums2 = create();
+        System.out.println(insert(2, "10"));
+        List<String> nums2 = create();
         System.out.println(mergeList(nums, nums2));
     }
 }
