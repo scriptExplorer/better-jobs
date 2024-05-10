@@ -8,7 +8,7 @@ import java.util.List;
  *
  * - 排列有序，允许值重复
  * - 查询速度快， 添加删除慢
- * - 初始化需要指定大小，扩容Time complexity: O(n)
+ * - 初始化需要指定大小，每次容量增加 50%，扩容Time complexity: O(n)
  * - 线程不安全
  * - 底层数组实现
  */
