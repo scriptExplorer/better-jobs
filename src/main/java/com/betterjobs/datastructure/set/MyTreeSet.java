@@ -5,8 +5,8 @@ import java.util.TreeSet;
 /**
  * 和HashSet 类似
  *  - 用Tree map实现，只不过没有存value
- *  - 因为需要在有序数据中找到正确位置，所以插入时的复杂度是O(log N)
- *  - 有序
+ *  - 因为需要在有序数据中找到正确位置，所以插入，删除时的复杂度是O(log N)
+ *  - Value有序 (如果关心插入顺序，可以使用LinkedHashSet)
  */
 public class MyTreeSet {
     public TreeSet<String> create() {
@@ -30,6 +30,15 @@ public class MyTreeSet {
     }
 
     /**
+     * Time Complexity O(log N)
+     * @param value
+     */
+    public void remove(String value) {
+        TreeSet<String> set = create();
+        set.remove(value);
+    }
+
+    /**
      * TreeSet 是链表实现，所以不支持根据索引查询
      * @param index
      * @return
@@ -44,7 +53,17 @@ public class MyTreeSet {
      */
     public String getFirst() {
         TreeSet<String> data = create();
-        return data.getFirst();
+        return data.first();
+    }
+
+    /**
+     * Time Complexity O(log N)
+     * @param value
+     * @return
+     */
+    public String lower(String value) {
+        TreeSet<String> data = create();
+        return data.lower(value);
     }
 
 

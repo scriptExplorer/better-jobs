@@ -1,9 +1,11 @@
-package com.betterjobs.datastructure;
+package com.betterjobs.datastructure.queue;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 /**
- * 后进先出
+ * 后进先出(单边数据结构)
  * - 基于Vector实现
  *      - 特性和ArrayList一样
  *          - 排列有序，允许值重复
@@ -23,6 +25,20 @@ public class MyStack {
 
     public static Stack<String> create() {
         Stack<String> nums = new Stack<>();
+        nums.push("1");
+        nums.push("3");
+        nums.push("2");
+        nums.push("5");
+        nums.push("4");
+        return nums;
+    }
+
+    /**
+     * 甲骨文官方推荐使用Deque代替Stack, 因为实现更加合理
+     * @return
+     */
+    public static Deque<String> createStack() {
+        Deque<String> nums = new ArrayDeque<>();
         nums.push("1");
         nums.push("3");
         nums.push("2");

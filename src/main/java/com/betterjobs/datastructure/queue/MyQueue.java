@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * Queue
+ * Queue(单边数据结构)
  * - 基于linkedlist实现 无界队列
  *    - 由于需要存储指针，所以空间复杂度会高一些。
  *    - 排列有序，允许值重复
@@ -15,7 +15,7 @@ import java.util.Queue;
  */
 public class MyQueue {
     public static Queue create() {
-        Queue<String> nums = new LinkedList<>();
+        Queue<String> nums = new LinkedList<String>();
         nums.add("1");
         nums.add("3");
         nums.add("2");
@@ -29,9 +29,9 @@ public class MyQueue {
      * Time complexity: O(1)
      * @param value
      */
-    public static void push(String value) {
+    public static void offer(String value) {
         Queue<String> nums = create();
-        nums.add(value);
+        nums.offer(value);
     }
 
     /**
