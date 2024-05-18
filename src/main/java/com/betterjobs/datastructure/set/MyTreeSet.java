@@ -49,11 +49,11 @@ public class MyTreeSet {
 
     /**
      * Time Complexity O(1)
+     *  tree set 不支持
      * @return
      */
     public String getFirst() {
-        TreeSet<String> data = create();
-        return data.first();
+       return null;
     }
 
     /**

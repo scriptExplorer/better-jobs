@@ -24,4 +24,8 @@ public class MyLinkedHashMap {
         data.put("4", "4");
         return data;
     }
+
+    public void put(String key, String value) {
+        create().put(key, value);
+    }
 }
