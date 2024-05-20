@@ -23,6 +23,10 @@ import java.util.Stack;
  */
 public class MyStack {
 
+    /**
+     * @deprecated  Stack(Vector) is a legacy class, use Deque instead
+     * @return
+     */
     public static Stack<String> create() {
         Stack<String> nums = new Stack<>();
         nums.push("1");
